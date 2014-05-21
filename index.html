@@ -1,394 +1,515 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+        <title>Firefox OS: Web Native</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Les Orchard">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <!--
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        -->
+        <link rel="stylesheet" href="css/theme/night.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
+        <link rel="stylesheet" href="css/local.css">
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
 
-	<body>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-		<div class="reveal">
+    <body>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
+        <div class="reveal">
 
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Firefox OS</h1>
+                    <h3>Web Native</h3>
+                    <p><small><a href="http://lmorchard.com">Les Orchard</a> / <a href="http://twitter.com/lmorchard">@lmorchard</a></small></p>
+                    <p><small><a href="http://selfconference.org/">self.conference</a> / Detroit / May 30, 2014</small></p>
+                </section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
+                <section>
+                    <h2>Who am I?</h2>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+                    <p><img width="50%" src="img/me.jpg" alt="Me, cat pirate"></p>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
+                    <p>{computer,web,mad} scientist</p>
+                    <p>{tech,scifi} writer</p>
+                    <p>home{brew,roast}er</p>
+                    <p><img src="img/Mozilla_dinosaur_head_logo.png" 
+                            style="height: 1em; margin: 0; border: 0; background: none" /> Mozillian</p>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+                    <aside class="notes">
+                        - Who am I (1 min)
+                          - Hi, my name is Les Orchard
+                          - {computer,web,mad} scientist
+                            - I’ve been a computer nerd since the 80’s, when I was a hyper kid whose attention could only be held for long periods of time by a keyboard and a glowing CRT
+                            - I found the web when I was in college in the 90’s
+                            - These days I like tinkering with random gadgets and electronics and blinking things
+                          - {tech,scifi} writer
+                            - I’ve gotten a few tech books published
+                            - I write little scifi stories, maybe I’ll do more someday
+                          - home{brew,roast}er
+                            - I make beer and I roast coffee
+                          - Mozillian
+                            - I’ve been there since 2008, 6 years as of May, longest I’ve been at any job.
+                    </aside>                    
+                </section>
 
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
+                <section>
+                    <h2>Agenda</h2>
 
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+                    <p>Mozilla &amp; Firefox OS</p>
+                    <p>Apps &amp; the Open Web</p>
+                    <p>Web APIs &amp; Web Activities</p>
+                    <p>Seriously, what about native?</p>
+                    <p>Developer Tools</p>
+                    <p>Hacking Firefox OS</p>
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+                    <aside class="notes">
+                        Just to make sure I'm not wasting your time and that
+                        you're in the right talk, here's a preview of what I'm
+                        going to talk about today.
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+                        (zoom out?)
+                    </aside>
+                </section>
 
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+                <section>
+                    <section>
+                        <h2>What is Mozilla?</h2>
+                        
+                        <blockquote cite="http://www.mozilla.org/en-US/mission/">
+                            &ldquo;Our mission is to promote openness,
+                            innovation &amp; opportunity on the Web.&rdquo;
+                        </blockquote>
+                        
+                        <p><img width="50%" src="img/Mozilla_dinosaur_head_logo.png"
+                            alt="Mozilla Dino Head"></p>
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+                        <aside class="notes">
+                            The dino head logo is actually deprecated, but I still really like it.
+                            We are an international organization, and we're largely powered by volunteers
+                            We exist to bring an open and free and user-centric internet to everyone
+                        </aside>
+                    </section>
 
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+                    <section>
+                        <h2>What is Mozilla?</h2>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
+                        <a href="http://bits.blogs.nytimes.com/2014/05/02/the-new-firefox-is-fantastic-so-is-every-other-web-browser/?_php=true&_type=blogs&_r=0" class="image">
+                            <img width="60%" src="img/firefox-is-fantastic.png">
+                        </a>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
+                        <p>Yeah, ensuring a fantastic Open Web
+                            is part of our mission.</p>
 
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
-				</section>
+                        <aside class="notes">
+                            - Funny, that's actually a Mozilla mission goal. :) 
+                            - https://twitter.com/lmorchard/status/464433116380028928
+                        </aside>
+                    </section>
 
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
+                    <section>
+                        <h2>What is Mozilla?</h2>
+                        
+                        <blockquote cite="http://www.mozilla.org/en-US/contribute/">
+                            &ldquo;The success of our mission depends on
+                            participation from people like you.&rdquo;
+                        </blockquote>
 
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
+                        <a href="https://www.google.com/search?q=mozilla+group+photo&client=firefox-aurora&hs=zNC&rls=org.mozilla:en-US:unofficial&channel=sb&source=lnms&tbm=isch&sa=X&ei=YOd8U-WMI8ySqgann4KQDA&ved=0CAgQ_AUoAQ&biw=1625&bih=949" class="image">
+                            <img width="66%" src="img/people.png">
+                        </a>
+                    
+                        <aside class="notes">
+                            - Mozilla is made of people
+                        </aside>
+                    </section>
 
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
+                    <section>
+                        <h2>What is Mozilla?</h2>
+                        <a href="http://thewebrocks.com/dinocards/#dino1" class="image">
+                            <img width="66%" src="img/dino-5.jpg">
+                        </a>
+                    
+                        <aside class="notes">
+                            - Mozilla is my dinosaur
+                        </aside>
+                    </section>
+                </section>
 
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
+                <section>
+                    <section>
+                        <h2>What is Firefox OS?</h2>
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+                        <blockquote cite="https://developer.mozilla.org/en-US/Firefox_OS">
+                            &ldquo;Firefox OS is a new mobile operating system,
+                            developed by Mozilla, and based on Linux and the
+                            Gecko engine that powers Firefox.&rdquo;
+                        </blockquote>
+                        
+                        <p><img style="width: 50%; background: #eee"
+                                src="img/firefox-os_logo-wordmark_RGB-vertical.png" alt="Firefox OS logo"></p>
+                    </section>
 
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+                    <section>
+                        <h2>What is Firefox OS?</h2>
 
-    var nodes = document.querySelectorAll( selector );
+                        <blockquote cite="https://blog.mozilla.org/blog/2014/01/06/firefox-os-looking-ahead/">
+                            &ldquo;Mozilla’s strategy has been to build Firefox
+                            OS primarily for emerging markets, where there are
+                            still billions of people who have yet to experience
+                            their first smartphone.&rdquo;
+                        </blockquote>
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+                        <a href="https://www.youtube.com/watch?feature=player_detailpage&v=qhgZdIYIXdg#t=260" class="image">
+                            <img style="width: 50%;"
+                            src="img/old-phones.png" alt="Firefox OS logo">
+                        </a>
+                        
+                        <aside class="notes">
+                            One of the goals is to get a capable smartphone
+                            into the hands of people who still use these old
+                            phones, at the same price point.
+                        </aside>
+                    </section>
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
+                    <section>
+                        <h2>What is Firefox OS?</h2>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+                        <p class="phones" cite="https://blog.mozilla.org/press/media-library/screenshots/">
+                            <img src="img/phones/Alcatel_ONETOUCH_FIRE_C.jpg">
+                            <img src="img/phones/ZTE_Open_C_4.jpg">
+                            <img src="img/phones/ZTE_Open_II_1.jpg">
+                            <img src="img/phones/Huawei_Ascend_Y300_II_2.jpg">
+                            <img src="img/phones/Alcatel_ONETOUCH_FIRE_E_1.jpg">
+                            <img src="img/phones/ZTE-Open-Icon-Grid.png">
+                            <img src="img/phones/LG_Fireweb_FINAL-2.jpg">
+                            <img src="img/phones/ALCATEL-ONE-TOUCH-Fire-Icon-Grid.png">
+                        </p>
+                        
+                        <aside class="notes">
+                            And there are devices for Firefox OS. 
+                        
+                            In fact, first device was launched last July.
 
-				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
+                            And now, I think we're up to at least 7 operator
+                            partners, 3 hardware partners.
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
-					</section>
-				</section>
+                            Not to be a hipster, but you probably haven't heard
+                            of any of them, because they're pretty much all
+                            released outside the US.
+                        </aside>
+                    </section>
 
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
+                    <section>
+                        <h2>What is Firefox OS?</h2>
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
+                        <img style="width: 60%;"
+                            src="img/Firefox_Layers_RGB_EN.jpg" alt="Firefox OS logo">
+                    </section>
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
+                    <section>
+                        <h2>What is Firefox OS?</h2>
 
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
+                        <a href="https://www.youtube.com/watch?feature=player_detailpage&v=qhgZdIYIXdg#t=1320" class="image">
+                            <img style="width: 90%;"
+                            src="img/android-minus-java.png" alt="Firefox OS logo">
+                        </a>
+                    </section>
+                </section>
 
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
-				</section>
+                <section>
 
-			</div>
+                    <section>
+                        <h2>What are Apps?</h2>
+                        <img style="width: 50%;"
+                            src="img/appetizer.jpg" alt="Firefox OS logo">
+                        <p>Appetizers!</p>
 
-		</div>
+                        <aside class="notes">
+                            - This is probably obvious to all of us in the room, but it bears a quick look.
+                        </aside>
+                    </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+                    <section>
+                        <h2>What are Apps?</h2>
+                        <!-- https://www.flickr.com/photos/zandperl/11765267495 -->
+                        <img style="width: 50%;" src="img/appetizer-no.jpg">
+                        <p><strike>Appetizers!</strike></p>
+                        <p>No!</p>
+                    </section>
 
-		<script>
+                    <section>
+                        <h2>What are Apps?</h2>
+                        <h3>App<strike>lication</strike>s</h3>
+                        <blockquote class="fragment" cite="http://www.bogost.com/blog/what_is_an_app.shtml">
+                            &ldquo;...an "app" is really much more than just a shortened slang term. It's not just the term that's shortened, and it's not just the term that's slanged. <b>It's also the application itself that's shortened and slanged</b>...&rdquo; <br> &mdash; <a href="http://www.bogost.com/blog/what_is_an_app.shtml">Ian Bogost</a> <small>(21 Jan 2011)</small>
+                        </blockquote>
+                        <a href="http://en.wikipedia.org/wiki/Cow_Clicker" class="image">
+                            <img class="fragment" style="width: 25%;" src="img/Cow_Clicker_cover.png">
+                        </a>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+                        <aside class="notes">
+                            - App is short for "application".
+                              - But, there's a reason why we have a special word that's caught on.
+                              - Apps are a shortening of the very idea of applications.
+                                - It's like buying a single instead of the whole album. 
+                                - I took that notion from Ian Bogost - http://www.bogost.com/blog/what_is_an_app.shtml
+                            - Ian Bogost is the guy who brought us Cow Clicker,
+                            a parody of all Facebook games and addictive apps
+                        </aside>
+                    </section>
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                    <section>
+                        <h2>What are Apps?</h2>
+                        <p>Single task</p>
+                        <p>Limited attention</p>
+                        <p>Focused UX</p>
+                        <p>Touch UI</p>
+                        <p>Cost $1 to $5 <br> <small>($10 is pushing it)</small></p>
+                    </section>
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+                    <aside class="notes">
+                        - Apps tend to be focused on a single task
+                        - Apps tend to have UI simplified for mobile and touch and smaller screens
+                        - Apps tend to accommodate limited attention
+                        - Apps tend to cost $1 or $5 or maybe $10, but that's pushing it
+                    </aside>
+                </section>
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+                <section>
+                    <section>
+                        <h2>What <strong>isn't</strong> the Open Web?</h2>
 
-		</script>
+                        <a href="http://en.wikipedia.org/wiki/App_Store_%28iOS%29" class="image">
+                            <img style="width: 50%;" src="img/Available_on_the_App_Store_(black).png">
+                            <br>
+                            <img style="width: 20%;" src="img/apple-app-store.png">
+                            <img style="width: 25%;" src="img/cocoa_cup.jpg">
+                        </a>
 
-	</body>
+                        <aside class="notes">
+                            Apple owns iOS and the underlying APIs &amp; frameworks
+
+                            - This translates into a captive App Store audience and taking a 30% cut.
+                            - Apple also restricts what you can buy and install based on where you are in the world.
+                            - That’s not to say you get nothing. The App Store
+                            is an undeniably effective machine for marketing
+                            and distributing iOS apps.
+                              - But, it's also the only way to market &amp; distribute iOS apps.
+                              - And iOS apps only work on Apple devices.
+                                                        ...
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What <strong>isn't</strong> the Open Web?</h2>
+                        <a href="http://en.wikipedia.org/wiki/Google_play" class="image">
+                            <img style="width: 25%;" src="img/Android-app-on-google-play.svg">
+                        </a>
+                        <a href="http://en.wikipedia.org/wiki/Amazon_App_Store" class="image">
+                            <img style="width: 25%;" src="img/amazon-appstore.png">
+                        </a>
+                        <br>
+                        <a href="http://www.androidstickers.com/android-developer-tool-belt-sticker-kit" class="image">
+                            <img style="width: 50%;" src="img/google_android_toolbelt.png">
+                        </a>
+
+                        <aside class="notes">
+                            Google owns Android
+
+                            - Like Apple, Google takes a 30% cut of apps sold through the Play Store. 
+                              - And, again, you get marketing and distribution help.
+                            - Unlike Apple, the APIs &amp; frameworks are published as Open Source.
+                            - Android works on many vendors' devices. 
+                            - You can even install an alternative App Store from Amazon.
+                            - That's all miles better than Apple, IMO.
+                            - But there are catches that worries me:
+                              - For example, Android software runs on Dalvik. 
+                                - Dalvik is essentially a reimplementation of Java.
+                                - They call it a "cleanroom" reimplementation, but that's in dispute.
+                                - Java has complicated licensing. Some of it is
+                                under the GPL. Some of it is not. Sun
+                                Microsystems wanted to encourage Java's spread,
+                                yet still have ways to tap in and make money.
+                                - These days, Oracle owns Java. They disagree
+                                that Google should be free to employ Java -
+                                cloned or not - without paying a great deal of
+                                money for it.
+                                  - http://arstechnica.com/information-technology/2010/08/oracles-java-lawsuit-undermines-its-open-source-credibility/
+                                  - http://www.itworld.com/mobile-wireless/278559/java-creator-unhappy-oracle-trial-outcome
+
+                            Apple &amp; Google &amp; Oracle are big companies, so they can fight this out. 
+
+                            - But, I hate my career &amp; industry being underfoot for those fights.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What <strong>is</strong> the Open Web?</h2>
+
+                        <p style="background: #eee">
+                            <a href="http://www.w3.org/html/logo/" class="image">
+                                <img style="width: 20%; padding: 0.5em;" 
+                                     src="img/HTML5_Logo_256.png">
+                            </a>
+                            <a href="http://ohdoylerules.com/web/css3-badge-logo-in-svg" class="image">
+                                <img style="width: 14.5%; padding: 0.5em;" 
+                                     src="img/css3.svg">
+                            </a>
+                            <a href="https://github.com/voodootikigod/logo.js" class="image">
+                                <img style="width: 20%; padding: 0.5em;" 
+                                     src="img/js.png">
+                            </a>
+                        </p>
+
+                        <aside class="notes">
+                            No one owns the Open Web
+
+                            - Something to notice here is that there are no
+                                pictures of vendors or company logos here. Just
+                                technologies.
+
+                            - HTTP, HTML, CSS, and JavaScript were all created as open industry standards.
+                            - Anyone is free to create their own implementations of web technologies.
+                            - I'm not a lawyer and who knows what's going to happen with patents.
+                            - But there are some talented lawyers and clueful
+                                engineers trying to keep everything in the clear
+                            - Since anyone can implement the web, no single party can control it.
+                            - Mozilla's goal is to keep it that way.
+                            - Firefox exists to be at least one of many independent implementations.
+                            - Firefox OS was created, in part, to carry that mission onto mobile devices.
+                        </aside>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h2>Apps &amp; the Open Web</h2>
+                    <p>...</p>
+                    <aside class="notes">
+                        ...
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Web APIs & Web Activities</h2>
+                    <p>...</p>
+                    <aside class="notes">
+                        ...
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>What about native?</h2>
+                    <p>...</p>
+                    <aside class="notes">
+                        ...
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Developer tools</h2>
+                    <p>...</p>
+                    <aside class="notes">
+                        ...
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Hacking Firefox OS</h2>
+                    <p>...</p>
+                    <aside class="notes">
+                        ...
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Recap</h2>
+                    <p>...</p>
+                    <aside class="notes">
+                        ...
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Thank you!</h2>
+                    <p><img width="50%" src="img/squirrel-cat.jpg"></p>
+                    <p>
+                        <small><a href="http://lmorchard.com">Les Orchard</a> / <a href="http://twitter.com/lmorchard">@lmorchard</a></small>
+                    </p>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+                // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+                var notes = event.currentSlide.querySelector(".notes");
+                if(notes) {
+                    console.info(notes.innerHTML.replace(/\n\s+/g,'\n'));
+                }
+            } );
+
+        </script>
+
+    </body>
 </html>
