@@ -9,6 +9,7 @@
 strike {
     opacity: 0.5;
 }
-strong {
-    color: #E7AD52;
+.reveal strong {
+    font-weight: normal;
+    color: #6d6;
 }
