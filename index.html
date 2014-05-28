@@ -782,7 +782,8 @@
                         </table>
 
                         <aside class="notes">
-                            Things have changed since 2007.
+                            And this is what we've come up with. Things have
+                            changed since 2007.
 
                             HTML5 came around and brought with it a raft-load
                             of new APIs that most of the browser makers started
@@ -874,12 +875,15 @@
 
                         <pre style="width: 75%"><code data-trim>
 var manifestUrl = 'https://my-app.example.com/manifest.webapp';
+
 var request = window.navigator.mozApps.install(manifestUrl);
+
 request.onsuccess = function () {
   // Save the App object that is returned
   var appRecord = this.result;
   alert('Installation successful!');
 };
+
 request.onerror = function () {
   // Display the error information from the DOMError object
   alert('Install failed, error: ' + this.error.name);
@@ -889,6 +893,9 @@ request.onerror = function () {
                         <aside class="notes">
                             Now, this is how you install an open web app using
                             its manifest.
+
+                            It's an API that Mozilla has proposed as a new open
+                            standard, but that for now just works on Firefox.
 
                             You can put this in your own page, and wire it up
                             to an "Install Now" button. This is Mozilla's
@@ -910,7 +917,9 @@ request.onerror = function () {
                             marketplace for Firefox OS.
 
                             This is also all open source, based on open APIs.
-                            You can build your own, if you wanted to.
+
+                            Seriously, you can build your app store, if you
+                            wanted to.
                         </aside>
                     </section>
 
@@ -925,7 +934,7 @@ request.onerror = function () {
 
                             There's a button there, marked "Free". That's what
                             you click to install the app. The installation code
-                            I showed you earlier is hooked up to that button.
+                            I showed you earlier is wired up to that button.
                         </aside>
                     </section>
 
@@ -953,7 +962,7 @@ request.onerror = function () {
                             Now wait. Isn't this supposed to be about Firefox OS?
 
                             Well, yes, it it. But, The thing about these Open
-                            Web Apps is that they don't just have to run on phones.
+                            Web Apps is that they don't just have to live on phones.
 
                             It's the web. It's everywhere.
                         </aside>
@@ -1030,8 +1039,8 @@ request.onerror = function () {
 
                         <aside class="notes">
                             And here's a wall of words. They name some of the
-                            APIs that Mozilla is working to add to the Open Web
-                            platform.
+                            additional APIs that Mozilla is working to add to
+                            the Open Web platform.
 
                             The plan is to get each of these things and more
                             working in practical applications, then work to
@@ -1077,6 +1086,8 @@ updateBatteryStatus();
                         </code></pre>
 
                         <aside class="notes">
+                           And when I say "add to the Open Web platform", I
+                           mean something like this. 
 
                         </aside>
                     </section>
