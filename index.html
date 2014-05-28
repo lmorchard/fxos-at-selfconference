@@ -581,7 +581,7 @@
                     -->
 
                     <section>
-                        <h2>Apps &amp; the Open Web</h2>
+                        <h2>Apps on the Web</h2>
 
                         <a href="http://www.imore.com/history-app-store-year-zero" class="image">
                             <img style="width: 80%; padding: 1em" src="img/ios_6_iphone_web_apps.jpg">
@@ -589,15 +589,16 @@
 
                         <aside class="notes">
                             - Remember back when the iPhone first came out?
-                            Steve Jobs said iPhone apps were web apps
+                            Steve Jobs said iPhone apps *were* web apps
 
                             - These things are as valid now as they were back
-                            in 2007. (There's more to say about this slide, but
-                            I'll get to that in a few minutes.)
+                            in 2007.
 
-                            - But, on the Open Web, you don't need a
+                            - On the Open Web, you don't need a
                             gatekeeper. Just come to my site and you're running
                             my code, from anywhere in the world.
+
+                            - That's called Code on Demand
 
                             - Most iOS and Android apps require a full
                             redownload to install a new version.
@@ -679,12 +680,20 @@
                         </blockquote>
 
                         <aside class="notes">
-                            Now, there's an elephant in the room. The web wasn't
-                            ready for apps. 
+                            Now, of course, back in 2007, the web wasn't ready
+                            for apps. 
 
                             Everything John Gruber says here was true about the web
                             of 2007.
+
+                            Web apps didn't work offline.
+
+                            They didn't have local data storage.
+
+                            And they didn't easily appear on anyone's home
+                            screen, iPhone or otherwise.
                             
+                            <!--
                             But, before the iPhone, there was precedent for web
                             apps. In 2005, Apple introduced the Dashboard for OS,
                             full of little web-based widgets that in retrospect
@@ -715,88 +724,420 @@
                             way. In contrast, it's obvious that Cocoa Touch and the
                             App Store has been wildly successful for Apple.
 
-                            But, friends of the Open Web, including Mozilla, took
-                            these failings as challenges.  Today, none of John
-                            Gruber's criticisms remain true.
-
                             And, in fact, Firefox OS is the ultimate response to
                             the final point: Every app in Firefox OS is built using
                             web technology.
+                            -->
 
-                            But, there's still a lot of work left to do.
+                            But, friends of the Open Web, including Mozilla, took
+                            these failings as challenges.
+
                         </aside>
                     </section>
-                </section>
-
-                <!-- webapis
-                    indexedDB (w3c)
-                    vibration (w3c)
-                    network information (w3c) 
-                    battery status (w3c)
-                    alarm
-                    notifications
-                    screen orientation
-                    device orientation
-                    pointer lock
-                    ambient light
-                    proximity
-                    payment
-                -->
-
-                <!-- future stuff
-
-                    serviceworkers
-                    web components (like polymer)
-                -->
-                <section>
 
                     <section>
-                        <h2>New HTML5 APIs</h2>
-                        <table class="reveal mine">
+                        <h2>HTML5 APIs</h2>
+                        <table class="reveal col3">
                             <tbody>
                                 <tr>
                                     <td>localStorage</td>
-                                    <td rowspan="6">
+                                    <td rowspan="8">
                                         <a href="http://www.w3.org/html/logo/" class="image">
-                                            <img style="width: 75%; margin: 0.5em; padding: 0.5em;" 
+                                            <img style="width: 80%; margin: 0.5em; padding: 0.5em;" 
                                                  src="img/HTML5_Logo_256.png">
                                         </a>
                                     </td>
                                     <td>Offline</td>
                                 </tr><tr>
+                                    <td>IndexedDB</td>
+                                    <td>AppCache</td>
+                                </tr><tr>
                                     <td>History</td>
-                                    <td>Geolocation</td>
-                                </tr><tr>
-                                    <td>Touch Events</td>
-                                    <td>Audio</td>
-                                </tr><tr>
-                                    <td>Web Workers</td>
                                     <td>Video</td>
                                 </tr><tr>
-                                    <td>Web Sockets</td>
+                                    <td>Geolocation</td>
+                                    <td>Audio</td>
+                                </tr><tr>
+                                    <td>Touch Events</td>
+                                    <td>Canvas</td>
+                                </tr><tr>
+                                    <td>Drag and Drop</td>
+                                    <td>WebGL</td>
+                                </tr><tr>
+                                    <td>Web Workers</td>
                                     <td>Media Capture</td>
                                 </tr><tr>
+                                    <td>Web Sockets</td>
                                     <td>WebRTC</td>
-                                    <td>Canvas</td>
                                 </tr>
                             </tbody>
                         </table>
-                    </section>
-                </section>
 
-                <section>
-
-
-                    <section>
-                        <h2>Web APIs</h2>
-                        <p>...</p>
                         <aside class="notes">
-                            ...
+                            Things have changed since 2007.
+
+                            HTML5 came around and brought with it a raft-load
+                            of new APIs that most of the browser makers started
+                            implementing.
+
+                            Now, web apps *do* work offline and they *do* have
+                            local data storage.
+
+                            And, in fact, they now have access to all sorts of
+                            capabilities like multimedia, 2D &amp; 3D graphics,
+                            as well as a growing array of ways to communicate
+                            over the web.
+                            
+                            But, there's still a lot of work left to do.
                         </aside>
                     </section>
                 </section>
 
                 <section>
+                    <section>
+                        <h2>"Add to home screen"</h2>
+
+                        <p>
+                            <a href="https://developer.chrome.com/multidevice/android/installtohomescreen"><img 
+                                src="img/android-add-to-homescreen-2.png" style="width: 33%"></a>
+                            <a href="http://www.lundalogik.com/crm-systems/apps-for-lime/lime-web-app/"><img
+                                src="img/iOS-add-to-homescreen.png" style="width: 33%"></a>
+                        </p>
+
+                        <aside class="notes">
+                            Remember that thing about web apps not showing up
+                            on home screens?
+
+                            It's not super obvious or well supported, but
+                            you've been able to turn a browser bookmark into a
+                            home screen icon for some time now.
+                            
+                            Apple even established the apple-touch-icon HTML
+                            link relation for specifying what that icon should
+                            look like.
+                            
+                            But really that's the bare minimum of what you need
+                            to "install" a web app: It's a bookmark.
+
+                            But, there's definitely room for improvement.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>The Open Web App Manifest</h2>
+
+                        <p><code>https://my-app.example.com/manifest.webapp</code></p>
+                        <p><code style="font-size: 0.8em">Content-Type: <a href="https://developer.mozilla.org/en-US/Apps/Build/Manifest">application/x-web-app-manifest+json</a></code></p>
+                        <pre style="width: 66%"><code data-trim>
+{
+  "name": "My App",
+  "description": "My elevator pitch goes here",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "Your name or organization",
+    "url": "http://your-homepage-here.org"
+  },
+  "default_locale": "en"
+}
+                        </code></pre>
+
+                        <aside class="notes">
+                            So, this is what we're calling an "Open Web App Manifest".
+
+                            It's a JSON file that lives on your web server at a
+                            public URL, and it declares a bunch of metadata
+                            about an app.
+
+                            These are some of the basics, like: Name,
+                            description, the home page, some icons, and some
+                            details on the developer.
+
+                            There's a lot more that can go in here, like
+                            requested permissions and such. But, I'll get to
+                            that in a bit.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Installing an Open Web App</h2>
+
+                        <pre style="width: 75%"><code data-trim>
+var manifestUrl = 'https://my-app.example.com/manifest.webapp';
+var request = window.navigator.mozApps.install(manifestUrl);
+request.onsuccess = function () {
+  // Save the App object that is returned
+  var appRecord = this.result;
+  alert('Installation successful!');
+};
+request.onerror = function () {
+  // Display the error information from the DOMError object
+  alert('Install failed, error: ' + this.error.name);
+};
+                        </code></pre>
+
+                        <aside class="notes">
+                            Now, this is how you install an open web app using
+                            its manifest.
+
+                            You can put this in your own page, and wire it up
+                            to an "Install Now" button. This is Mozilla's
+                            answer to "Add to home screen".
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Build Your Own Marketplace</h2>
+
+                        <a href="https://marketplace.firefox.com"><img src="img/fx-marketplace.png"
+                            style="width: 80%"></a>
+
+                        <aside class="notes">
+                            It's also, by the way, how you can build your own
+                            app marketplace.
+
+                            This is marketplace.firefox.com, the default app
+                            marketplace for Firefox OS.
+
+                            This is also all open source, based on open APIs.
+                            You can build your own, if you wanted to.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Build Your Own Marketplace</h2>
+
+                        <a href="https://marketplace.firefox.com"><img src="img/fx-marketplace-button.png"
+                            style="width: 80%"></a>
+
+                        <aside class="notes">
+                            Here's the detail page for an app.
+
+                            There's a button there, marked "Free". That's what
+                            you click to install the app. The installation code
+                            I showed you earlier is hooked up to that button.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Build Your Own Marketplace</h2>
+
+                        <a href="https://marketplace.firefox.com"><img src="img/fx-marketplace-install.png"
+                            style="width: 80%"></a>
+
+                        <aside class="notes">
+                            And, when you click it, Firefox asks you if you
+                            want to install the app.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Build Your Own Marketplace</h2>
+
+                        <a href="https://marketplace.firefox.com"><img src="img/fx-marketplace-installed.png"
+                            style="width: 80%"></a>
+
+                        <aside class="notes">
+                            I say yes, and it ends up in my Applications folder.
+
+                            Now wait. Isn't this supposed to be about Firefox OS?
+
+                            Well, yes, it it. But, The thing about these Open
+                            Web Apps is that they don't just have to run on phones.
+
+                            It's the web. It's everywhere.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Run <strike>Everywhere</strike> a Bunch of Places</h2>
+
+                        <a href="https://marketplace.firefox.com"><img src="img/fx-crossplatform.png"
+                            style="width: 80%"></a>
+
+                        <aside class="notes">
+                            Well, a bunch of places anyway.
+
+                            In fact, here are some quick screenshots where I
+                            installed the same web app on Firefox OS, Android,
+                            Ubuntu, and OS X.
+
+                            Basically, all fine OSes where Firefox can be found.
+
+                            Unfortunately, that does not so far include iOS.
+
+                            It does include Windows, but I forgot to take a
+                            screenshot for Windows.
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Web APIs</h2>
+                        <p><a href="https://wiki.mozilla.org/WebAPI"><img src="img/hardware-blowup.png"></a></p>
+                        <aside class="notes">
+                            Remember when I said that HTML5 filled in a lot of
+                            the gaps that made the web ready for apps?
+
+                            Well, there's still a lot more work to do.
+
+                            It turns out that smartphones and tablets and
+                            laptops have grown a lot of interesting
+                            capabilities and use cases over the years.
+
+                            They've got accelerometers and compasses and
+                            multiple radios and touch screens and... well we're
+                            going to need to give the web some more APIs
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web APIs</h2>
+                        <table class="reveal col3 smaller">
+                            <tr>
+                                <td>Vibration</td>
+                                <td>Network Information</td>
+                                <td>Battery Status</td>
+                            </tr><tr>
+                                <td>Alarm</td>
+                                <td>Notifications</td>
+                                <td>Payment</td>
+                            </tr><tr>
+                                <td>Screen Orientation</td>
+                                <td>Device Orientation</td>
+                                <td>Ambient Light</td>
+                            </tr><tr>
+                                <td>Proximity Sensor</td>
+                                <td>Pointer Lock</td>
+                                <td>FM Radio</td>
+                            </tr><tr>
+                                <td>Telephony</td>
+                                <td>SMS</td>
+                                <td>Push</td>
+                            </tr>
+                        </table>
+
+                        <aside class="notes">
+                            And here's a wall of words. They name some of the
+                            APIs that Mozilla is working to add to the Open Web
+                            platform.
+
+                            The plan is to get each of these things and more
+                            working in practical applications, then work to
+                            turn them into open industry standards. In fact,
+                            some of these already are, or at least the process
+                            is well under way.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web APIs</h2>
+                        <h3>Vibration API</h3>
+
+                        <pre style="width: 55%"><code data-trim>
+window.navigator.vibrate(200);
+window.navigator.vibrate([200, 100, 200]);
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web APIs</h2>
+                        <h3>Battery Status API</h3>
+
+                        <pre style="width: 80%"><code data-trim>
+var battery = navigator.battery ||
+              navigator.mozBattery || navigator.webkitBattery;
+
+function updateBatteryStatus() {
+  console.log("Battery status: " + battery.level * 100 + " %");
+
+  if (battery.charging) {
+    console.log("Battery is charging"); 
+  }
+}
+
+battery.addEventListener("chargingchange", updateBatteryStatus);
+battery.addEventListener("levelchange", updateBatteryStatus);
+updateBatteryStatus();
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web APIs</h2>
+                        <h3>Screen Orientation API</h3>
+
+                        <pre style="width: 80%"><code data-trim>
+/* For portrait, we want the tool bar on top */
+@media screen and (orientation: portrait) {
+  #toolbar { width: 100%; }
+}
+
+/* For landscape, we want the tool bar stick on the left */
+@media screen and (orientation: landscape) {
+  #toolbar { position: fixed; width: 2.65em; height: 100%; }
+}
+                        </code></pre>
+
+                        <pre style="width: 80%"><code data-trim>
+screen.addEventListener("orientationchange", function () {
+  console.log("The orientation of the screen is: " +
+              screen.orientation);
+});
+
+screen.lockOrientation('landscape');
+                        </code></pre>
+
+                        <aside class="notes">
+                            Some of these APIs are actually useful in both CSS and JavaScript.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web APIs</h2>
+                        <h3>Device Orientation API</h3>
+
+                        <pre style="width: 80%"><code data-trim>
+function handleOrientation(event) {
+  var absolute = event.absolute;
+  var z_rot    = event.alpha;
+  var x_rot    = event.beta;
+  var y_rot    = event.gamma;
+
+  // Do stuff with the new orientation data
+}
+
+window.addEventListener("deviceorientation", handleOrientation,
+                        true);
+                        </code></pre>
+
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Orientation_and_motion_data_explained"><img 
+                            src="img/axes.png" style="width: 33%"></a>
+
+                        <aside class="notes">
+                            There's also a Device Orientation API. Which,
+                            though it influences Screen Orientation, is exposed
+                            as its own API as well.
+
+                            Here, you can see some quick code that responds to
+                            changes in the device's orientation by listening
+                            for a "deviceorientation" event.
+
+                            There's also a "devicemotion" event that reports on
+                            physicaly acceleration on all three axes, as well
+                            as the rate of rotation on those axes.
+                        </aside>
+                    </section>
 
                     <section>
                         <h2>Web Activities</h2>
@@ -807,15 +1148,11 @@
                     </section>
                 </section>
 
-                <section>
-                    <section>
-                        <h2>Marketplaces</h2>
+                <!-- future stuff
 
-                        <aside class="notes">
-                            - superbookmarks?
-                        </aside>
-                    </section>
-                </section>
+                    serviceworkers
+                    web components (like polymer)
+                -->
 
                 <section>
                     <h2>What about native?</h2>

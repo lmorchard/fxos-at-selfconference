@@ -1,3 +1,6 @@
+.reveal blockquote {
+    width: 80%;
+}
 .reveal section p.phones {
     display: block;
     background-color: #eee;
@@ -15,10 +18,13 @@ strike {
     color: #6d6;
     */
 }
-table.mine td {
+table.col3 td {
     text-align: center;
     width: 33%;
 }
-table.mine td img {
+table.col3 td img {
     vertical-align: text-top;
+}
+table.smaller td {
+    font-size: 0.8em
 }
