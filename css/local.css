@@ -7,9 +7,18 @@
     width: 18%; margin: 1px; border: none; background: none
 }
 strike {
-    opacity: 0.5;
+    opacity: 0.33;
 }
 .reveal strong {
+    /*
     font-weight: normal;
     color: #6d6;
+    */
+}
+table.mine td {
+    text-align: center;
+    width: 33%;
+}
+table.mine td img {
+    vertical-align: text-top;
 }
