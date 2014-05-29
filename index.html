@@ -676,9 +676,13 @@
                             &ldquo;Telling developers that web apps are iPhone
                             apps just doesn’t fly. Think about it this way: If
                             web apps — <br>
+                            <br>
                             <strong>which are only accessible over a network; <br>
+                            <br>
                                 which don’t get app icons in the iPhone home screen; <br> 
+                            <br>
                                 which don’t have any local data storage</strong><br> 
+                            <br>
                             — are such a great way to write software for iPhone, 
                             <strong>then why isn’t Apple using this
                                 technique for any of their own iPhone apps?</strong>&rdquo;
@@ -785,9 +789,8 @@
                             And this is what we've come up with. Things have
                             changed since 2007.
 
-                            HTML5 came around and brought with it a raft-load
-                            of new APIs that most of the browser makers started
-                            implementing.
+                            HTML5 brought with it a raft-load of new APIs that
+                            most of the browser makers started implementing.
 
                             Now, web apps *do* work offline and they *do* have
                             local data storage.
@@ -898,8 +901,9 @@ request.onerror = function () {
                             standard, but that for now just works on Firefox.
 
                             You can put this in your own page, and wire it up
-                            to an "Install Now" button. This is Mozilla's
-                            answer to "Add to home screen".
+                            to an "Install Now" button. 
+                            
+                            This is Mozilla's answer to "Add to home screen".
                         </aside>
                     </section>
 
@@ -972,7 +976,7 @@ request.onerror = function () {
                         <h2>Run <strike>Everywhere</strike> a Bunch of Places</h2>
 
                         <a href="https://marketplace.firefox.com"><img src="img/fx-crossplatform.png"
-                            style="width: 80%"></a>
+                            style="width: 95%"></a>
 
                         <aside class="notes">
                             Well, a bunch of places anyway.
@@ -1015,7 +1019,7 @@ request.onerror = function () {
                         <h2>Web APIs</h2>
                         <table class="reveal col3 smaller">
                             <tr>
-                                <td>Vibration</td>
+                                <td>Web Activities</td>
                                 <td>Network Information</td>
                                 <td>Battery Status</td>
                             </tr><tr>
@@ -1027,8 +1031,8 @@ request.onerror = function () {
                                 <td>Device Orientation</td>
                                 <td>Ambient Light</td>
                             </tr><tr>
+                                <td>Vibration</td>
                                 <td>Proximity Sensor</td>
-                                <td>Pointer Lock</td>
                                 <td>FM Radio</td>
                             </tr><tr>
                                 <td>Telephony</td>
@@ -1047,6 +1051,9 @@ request.onerror = function () {
                             turn them into open industry standards. In fact,
                             some of these already are, or at least the process
                             is well under way.
+
+                            I'm not going to go through all of these, but I can
+                            highlight a few of them.
                         </aside>
                     </section>
 
@@ -1060,6 +1067,8 @@ window.navigator.vibrate([200, 100, 200]);
                         </code></pre>
 
                         <aside class="notes">
+                           And when I say "add to the Open Web platform", I
+                           mean something like this. 
 
                         </aside>
                     </section>
@@ -1086,8 +1095,6 @@ updateBatteryStatus();
                         </code></pre>
 
                         <aside class="notes">
-                           And when I say "add to the Open Web platform", I
-                           mean something like this. 
 
                         </aside>
                     </section>
@@ -1159,24 +1166,245 @@ window.addEventListener("deviceorientation", handleOrientation,
                     </section>
                 </section>
 
-                <!-- future stuff
-
-                    serviceworkers
-                    web components (like polymer)
-                -->
-
                 <section>
                     <section>
                         <h2>Web Activities</h2>
-                        <p>...</p>
+                        <p>
+                            <img src="img/web-act-boilerplate.png">
+                            <img src="img/web-act-pick.png">
+                        </p>
                         <aside class="notes">
-                            ...
+                            So this is a particularly interesting Web API,
+                            inspired by Android Intents. It enables you to call
+                            on other apps as APIs. But, you don't need to be
+                            aware of any other apps in particular.
+
+                            It centers around activities, like picking an
+                            image. Multiple apps can register to handle an
+                            activity, but the user gets to choose which one to
+                            use to satisfy the request.
+
+                            In other words, it means that this app here on the
+                            left can delegate finding an image to one of the
+                            apps listed on the right.
+
+                            It also helps reduce the number of apps that need
+                            access to hardware. If I can just pick an image
+                            from the gallery or launch the camera app, then my
+                            app doesn't need camera hardware access itself.
                         </aside>
+                    </section>
+
+                    <section>
+                        <h3>Web Activities</h3>
+                        <pre style="width: 70%"><code data-trim>
+{
+  // Other App Manifest related stuff
+
+  // Activity registration
+  "activities": {
+
+    // The name of the activity to handle (here "pick")
+    "pick": {
+      "href": "./pick.html",
+      "disposition": "inline",
+      "filters": {
+        "type": ["image/*","image/jpeg","image/png"]
+      },
+      "returnValue": true
+    }
+  }
+}
+                        </code></pre>
+
+                        <aside class="notes">
+                            Remember when I mentioned earlier that an Open Web
+                            App manifest could contain a bunch of other things?
+
+                            Declaring what activities an app can handle is
+                            one of those things.
+
+                            You can also specify more details about the
+                            situations where your app is relevant to the
+                            activity - like the content type filter shown here.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web Activities</h2>
+                        <pre style="width: 90%"><code data-trim>
+navigator.mozSetMessageHandler('activity', function(activityRequest) {
+  var option = activityRequest.source;
+
+  if (option.name === "pick") {
+    // Do something to handle the activity
+    ...
+
+    // Send back the result
+    if (picture) {
+      activityRequest.postResult(picture);
+    } else {
+      activityRequest.postError("Unable to provide a picture");
+    }
+  }
+});
+                        </code></pre>
+
+                        <aside class="notes">
+                            And then, you can use code like this in an app to
+                            handle activity requests.
+                        </aside>
+
+                    </section>
+
+                    <section>
+                        <h2>Web Activities</h2>
+                        <pre style="width: 70%"><code data-trim>
+var activity = new MozActivity({
+  // Ask for the "pick" activity
+  name: "pick",
+
+  // Provide the data required by 
+  // the filters of the activity
+  data: { type: "image/jpeg" }
+});
+
+activity.onsuccess = function() {
+  var picture = this.result;
+  console.log("A picture has been retrieved");
+};
+
+activity.onerror = function() {
+  console.log(this.error);
+};
+                        </code></pre>
+
+                        <aside class="notes">
+                            On the other side of things, you can kick off an
+                            activity with code like this.  
+                            
+                            Notice that this asks for both an activity by name
+                            and specifies the content type required.
+
+                            This matches up with the filters declared in the
+                            app manifest.
+
+                            If this code had been asking for an audio file,
+                            rather than an image, then the registered app would
+                            not have been presented as a choice to the user.
+                        </aside>
+
                     </section>
                 </section>
 
                 <section>
-                    <h2>What about native?</h2>
+                    <section>
+                        <h2>Packaged Apps</h2>
+
+                        <blockquote cite="https://developer.mozilla.org/en-US/Marketplace/Options/Packaged_apps">
+                            &ldquo;A packaged app is an Open Web App that has
+                            all of its resources (HTML, CSS, JavaScript, app
+                            manifest, and so on) contained in a zip file,
+                            instead of having its resources on a Web
+                            server.&rdquo;
+                        </blockquote>
+                        <aside class="notes">
+                            Now, I know I really played up the whole thing
+                            about code on demand earlier and how you can update
+                            your app resources incrementally.
+
+                            Under Firefox OS, these are called Hosted apps.
+
+                            Well, as it turns out, some apps benefit from being
+                            bundled up in one compound resource as a .zip
+                            file.
+
+                            And, you can cryptographically sign the whole
+                            bundle in order to make the app tamper resistant.
+
+                            These .zip bundles are called Packaged apps.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Privileged Apps</h2>
+
+                        <blockquote cite="https://developer.mozilla.org/en-US/Marketplace/Options/Packaged_apps#Privileged_app">
+                            &ldquo;<strong>A privileged app is one that makes use of privileged APIs</strong> ...
+                            When submitted to the Firefox Marketplace,
+                            privileged apps are approved using a special
+                            process. This process gives users of the app a
+                            level of assurance that the app has been carefully
+                            reviewed for potential security, privacy and
+                            capability issues.&rdquo;
+                        </blockquote>
+                        <aside class="notes">
+                            As it turns out, Firefox OS restricts usage of a
+                            handful of Web APIs to these privileged packaged
+                            apps that have been reviewed by the Firefox
+                            Marketplace.
+
+                            For the most part, these APIs include things
+                            that access your personal data like contacts or
+                            files in device storage like photos or music.
+
+                            So, many apps can get away with never touching
+                            these APIs. Or, you can get delegated access by way
+                            of Web Activities. But, the option is there, if
+                            your app absolutely needs to use these APIs
+                            directly.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Permissions</h2>
+                        <pre style="width: 70%"><code data-trim>
+"permissions": {
+  "contacts": {
+    "description": "Required for autocompletion",
+    "access": "readcreate"
+    },
+  "alarms": {
+    "description": "Required to schedule notifications"
+  }
+}
+                        </code></pre>
+                        <aside class="notes">
+                            And when you do need to use privileged APIs,
+                            there's an optional "permissions" key in the Open
+                            Web App manifest where you need to list out what
+                            your app plans to use.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Certified Apps</h2>
+
+                        <blockquote cite="https://developer.mozilla.org/en-US/Marketplace/Options/Packaged_apps#Certified_app">
+                            &ldquo;<strong>A certified app is one that makes used of
+                                certified APIs</strong>, APIs that offer access to critical
+                            system function such as the default dialer or the
+                            system settings app on a device. ... A certified app must be
+                            approved for a device by the OEM or carrier.&rdquo;
+                        </blockquote>
+                        <aside class="notes">
+                            There's also a Certified class of packaged apps.
+                            These get access to even more sensitive APIs like
+                            device settings or making phone calls. These are
+                            generally a core part of Firefox OS itself,
+                            maintained by Mozilla or the device manufacturer.
+
+                            But, like I mentioned earlier, this is where Web
+                            Activities can come into play: You can delegate to
+                            one of the built-in apps that have access to
+                            sensitive data.
+                        </aside>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h2>Developer tools</h2>
                     <p>...</p>
                     <aside class="notes">
                         ...
@@ -1184,7 +1412,7 @@ window.addEventListener("deviceorientation", handleOrientation,
                 </section>
 
                 <section>
-                    <h2>Developer tools</h2>
+                    <h2>What about native?</h2>
                     <p>...</p>
                     <aside class="notes">
                         ...
