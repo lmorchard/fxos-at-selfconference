@@ -13,6 +13,7 @@ strike {
     opacity: 0.33;
 }
 .reveal strong {
+    text-shadow: #333 5px 5px;
     /*
     font-weight: normal;
     color: #6d6;
