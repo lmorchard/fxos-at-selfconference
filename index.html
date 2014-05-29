@@ -111,8 +111,8 @@
                     <p>Apps &amp; the Open Web</p>
                     <p>Web APIs &amp; Web Activities</p>
                     <p>Packaged, Privileged, &amp; Certified Apps</p>
-                    <p>Seriously, what about native?</p>
                     <p>Developer Tools</p>
+                    <p>Seriously, what about native?</p>
                     <p>Hacking Firefox OS</p>
 
                     <aside class="notes">
@@ -730,74 +730,24 @@
                     </section>
 
                     <section>
-                        <h2>The Open Web App Manifest</h2>
+                        <h2>Adaptive App Search</h2>
 
-                        <p><code>https://my-app.example.com/manifest.webapp</code></p>
-                        <p><code style="font-size: 0.8em">Content-Type: <a href="https://developer.mozilla.org/en-US/Apps/Build/Manifest">application/x-web-app-manifest+json</a></code></p>
-                        <pre style="width: 66%"><code data-trim>
-{
-  "name": "My App",
-  "description": "My elevator pitch goes here",
-  "launch_path": "/index.html",
-  "icons": {
-    "128": "/img/icon-128.png"
-  },
-  "developer": {
-    "name": "Your name or organization",
-    "url": "http://your-homepage-here.org"
-  },
-  "default_locale": "en"
-}
-                        </code></pre>
+                        <p><img src="img/fx-app-search.png"></p>
 
                         <aside class="notes">
-                            So, this is what we're calling an "Open Web App Manifest".
+                            But, since these are just web apps, Firefox OS does
+                            something interesting on the home screen.
 
-                            It's a JSON file that lives on your web server at a
-                            public URL, and it declares a bunch of metadata
-                            about an app.
-
-                            These are some of the basics, like: Name,
-                            description, the home page, some icons, and some
-                            details on the developer.
-
-                            There's a lot more that can go in here, like
-                            requested permissions and such. But, I'll get to
-                            that in a bit.
-                        </aside>
-                    </section>
-
-                    <section>
-                        <h2>Installing an Open Web App</h2>
-
-                        <pre style="width: 75%"><code data-trim>
-var manifestUrl = 'https://my-app.example.com/manifest.webapp';
-
-var request = window.navigator.mozApps.install(manifestUrl);
-
-request.onsuccess = function () {
-  // Save the App object that is returned
-  var appRecord = this.result;
-  alert('Installation successful!');
-};
-
-request.onerror = function () {
-  // Display the error information from the DOMError object
-  alert('Install failed, error: ' + this.error.name);
-};
-                        </code></pre>
-
-                        <aside class="notes">
-                            Now, this is how you install an open web app using
-                            its manifest.
-
-                            It's an API that Mozilla has proposed as a new open
-                            standard, but that for now just works on Firefox.
-
-                            You can put this in your own page, and wire it up
-                            to an "Install Now" button. 
+                            This is called "adaptive app search": you can
+                            search for and launch apps and content right from
+                            the home screen without formally installing them
+                            first. 
                             
-                            This is Mozilla's answer to "Add to home screen".
+                            There's that code-on-demand thing again that the
+                            web's good at.
+
+                            If you like what you find, you can add it to your
+                            home screen for easy access later.
                         </aside>
                     </section>
 
@@ -808,8 +758,9 @@ request.onerror = function () {
                             style="width: 80%"></a>
 
                         <aside class="notes">
-                            It's also, by the way, how you can build your own
-                            app marketplace.
+                            But even with an app search on your home screen,
+                            having a place to browse for reviewed apps to
+                            is handy.
 
                             This is marketplace.firefox.com, the default app
                             marketplace for Firefox OS.
@@ -831,8 +782,8 @@ request.onerror = function () {
                             Here's the detail page for an app.
 
                             There's a button there, marked "Free". That's what
-                            you click to install the app. The installation code
-                            I showed you earlier is wired up to that button.
+                            you click to install the app. I'll show you the
+                            code behind this button in a little bit.
                         </aside>
                     </section>
 
@@ -843,8 +794,8 @@ request.onerror = function () {
                             style="width: 80%"></a>
 
                         <aside class="notes">
-                            And, when you click it, Firefox asks you if you
-                            want to install the app.
+                            And, when you click the button, Firefox asks you if
+                            you really want to install the app.
                         </aside>
                     </section>
 
@@ -876,7 +827,7 @@ request.onerror = function () {
                             Well, a bunch of places anyway.
 
                             In fact, here are some quick screenshots where I
-                            installed the same web app on Firefox OS, Android,
+                            installed another clock app on Firefox OS, Android,
                             Ubuntu, and OS X.
 
                             Basically, all fine OSes where Firefox can be found.
@@ -887,6 +838,86 @@ request.onerror = function () {
                             screenshot for Windows.
                         </aside>
                     </section>
+
+                    <section>
+                        <h2>The Open Web App Manifest</h2>
+
+                        <p><code>https://my-app.example.com/manifest.webapp</code></p>
+                        <p><code style="font-size: 0.8em">Content-Type: <a href="https://developer.mozilla.org/en-US/Apps/Build/Manifest">application/x-web-app-manifest+json</a></code></p>
+                        <pre style="width: 66%"><code data-trim>
+{
+  "name": "My App",
+  "description": "My elevator pitch goes here",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "Your name or organization",
+    "url": "http://your-homepage-here.org"
+  },
+  "default_locale": "en"
+}
+                        </code></pre>
+
+                        <aside class="notes">
+                            So, even though "installing" a web app doesn't need
+                            to be more than a bookmark with special UI, it can
+                            be more.
+
+                            This is what we're calling an "Open Web App Manifest".
+
+                            It's a JSON file that lives on your web server at a
+                            public URL, and it describes a web app.
+
+                            These are some of the basics, like: Name,
+                            description, the home page, some icons, and some
+                            details on the developer.
+
+                            There's a lot more that can go in here. But, I'll
+                            get to that in a bit.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Installing an Open Web App</h2>
+
+                        <pre style="width: 75%"><code data-trim>
+var manifestUrl = 'https://my-app.example.com/manifest.webapp';
+
+var request = window.navigator.mozApps.install(manifestUrl);
+
+request.onsuccess = function () {
+  // Save the App object that is returned
+  var appRecord = this.result;
+  alert('Installation successful!');
+};
+
+request.onerror = function () {
+  // Display the error information from the DOMError object
+  alert('Install failed, error: ' + this.error.name);
+};
+                        </code></pre>
+
+                        <aside class="notes">
+                            Now, this is how you install an open web app using
+                            its manifest.
+
+                            This is the code behind the install button on the
+                            Firefox Marketplace.
+
+                            You can put this on your own page, and wire it up
+                            to a button.
+
+                            It's an API that Mozilla has proposed as a new open
+                            standard.
+
+                            And like I said, this works on desktop as well as
+                            mobile.
+                            
+                            This is Mozilla's answer to "Add to home screen".
+                        </aside>
+                    </section>
                 </section>
 
                 <section>
@@ -894,6 +925,8 @@ request.onerror = function () {
                         <h2>Web APIs</h2>
                         <p><a href="https://wiki.mozilla.org/WebAPI"><img src="img/hardware-blowup.png"></a></p>
                         <aside class="notes">
+                            Speaking of proposed APIs...
+
                             Remember when I said that HTML5 filled in a lot of
                             the gaps that made the web ready for apps?
 
@@ -901,10 +934,10 @@ request.onerror = function () {
 
                             It turns out that smartphones and tablets and
                             laptops have grown a lot of interesting
-                            capabilities and use cases over the years.
+                            capabilities over the years.
 
                             They've got accelerometers and compasses and
-                            multiple radios and touch screens and... well we're
+                            multiple radios and multi-touch screens and... well we're
                             going to need to give the web some more APIs
                         </aside>
                     </section>
@@ -947,8 +980,7 @@ request.onerror = function () {
                             The plan is to get each of these things and more
                             working in practical applications, then work to
                             turn them into open industry standards. In fact,
-                            some of these already are, or at least the process
-                            is well under way.
+                            some of these already are on a standards track.
 
                             I'm not going to go through all of these, but I can
                             highlight a few of them.
@@ -968,6 +1000,9 @@ window.navigator.vibrate([200, 100, 200]);
                            And when I say "add to the Open Web platform", I
                            mean something like this. 
 
+                           You don't need to install a special plugin or SDK.
+                           This comes out of the box with the browser and
+                           the web app runtime (otherwise known as Gecko).
                         </aside>
                     </section>
 
@@ -993,11 +1028,14 @@ updateBatteryStatus();
                         </code></pre>
 
                         <aside class="notes">
-                            And here's a more complex example. You can see that
-                            the feature is used here with moz and webkit
-                            prefixes, because it's on its way to becoming an
-                            official standard but doesn't have univeral support
-                            yet. Sorry, the web is bound to be a bit messy.
+                            And here's a more complex example. 
+                            
+                            You can see that the feature is used here with moz
+                            and webkit prefixes, because it's on its way to
+                            becoming an official standard. 
+                            
+                            But, you can see this works much like any other web
+                            API, using event listners and such.
                         </aside>
                     </section>
 
@@ -1018,6 +1056,8 @@ updateBatteryStatus();
                         </code></pre>
 
                         <pre style="width: 80%"><code data-trim>
+var screen = window.screen;
+
 screen.addEventListener("orientationchange", function () {
   console.log("The orientation of the screen is: " +
               screen.orientation);
@@ -1076,15 +1116,16 @@ window.addEventListener("deviceorientation", handleOrientation,
                             <img src="img/web-act-pick.png">
                         </p>
                         <aside class="notes">
-                            So this is a particularly interesting Web API,
-                            inspired by Android Intents. It enables you to call
-                            on other apps as APIs. But, you don't need to be
+                            So this is a particularly interesting Web API. It
+                            enables you to call on other apps as APIs. 
+                            
+                            But, you as the app developer don't need to be
                             aware of any other apps in particular.
 
                             It centers around activities, like picking an
-                            image. Multiple apps can register to handle an
-                            activity, but the user gets to choose which one to
-                            use to satisfy the request.
+                            image. Multiple apps can register to handle that
+                            activity, but the user gets to choose which one
+                            will satisfy the request.
 
                             In other words, it means that this app here on the
                             left can delegate finding an image to one of the
@@ -1094,6 +1135,10 @@ window.addEventListener("deviceorientation", handleOrientation,
                             access to hardware. If I can just pick an image
                             from the gallery or launch the camera app, then my
                             app doesn't need camera hardware access itself.
+
+                            This API is inspired by Intents on Android, and in
+                            fact I think there is work to allow web apps on
+                            Android to use Intents via the Web Activities API.
                         </aside>
                     </section>
 
@@ -1212,16 +1257,16 @@ activity.onerror = function() {
                         </blockquote>
                         <aside class="notes">
                             Now, I know I really played up the whole thing
-                            about code on demand earlier and how you can update
-                            your app resources incrementally.
+                            about code on demand earlier.
 
-                            Under Firefox OS, these are called Hosted apps.
+                            In Firefox OS, plain web apps are called Hosted
+                            apps.
 
-                            Well, as it turns out, some apps benefit from being
+                            But, as it turns out, some apps benefit from being
                             bundled up in one compound resource as a .zip
                             file.
 
-                            And, you can cryptographically sign the whole
+                            For one, you can cryptographically sign the whole
                             bundle in order to make the app tamper resistant.
 
                             These .zip bundles are called Packaged apps.
@@ -1241,20 +1286,27 @@ activity.onerror = function() {
                             capability issues.&rdquo;
                         </blockquote>
                         <aside class="notes">
-                            As it turns out, Firefox OS restricts usage of a
-                            handful of Web APIs to these privileged packaged
-                            apps that have been reviewed by the Firefox
-                            Marketplace.
+                            So, with signed, packaged apps in mind: Firefox OS
+                            restricts usage of a handful of Web APIs.
+                            
+                            Only packaged apps that have been reviewed by the
+                            Firefox Marketplace team can use these select APIs.
+
+                            These apps are called Privileged apps.
 
                             For the most part, these APIs include things
                             that access your personal data like contacts or
-                            files in device storage like photos or music.
+                            files in device storage such as photos or music.
 
-                            So, many apps can get away with never touching
-                            these APIs. Or, you can get delegated access by way
-                            of Web Activities. But, the option is there, if
-                            your app absolutely needs to use these APIs
-                            directly.
+                            This sounds a bit like the approval-based app store
+                            model used by Apple and Google.
+                            
+                            But, keep in mind that most apps can get away with
+                            never touching privileged APIs. 
+                            
+                            In fact, for the most part, they can get delegated
+                            access to sensitive data by using Web Activities
+                            that call on already-approved core apps.
                         </aside>
                     </section>
 
@@ -1296,21 +1348,92 @@ activity.onerror = function() {
                             generally a core part of Firefox OS itself,
                             maintained by Mozilla or the device manufacturer.
 
-                            But, like I mentioned earlier, this is where Web
-                            Activities can come into play: You can delegate to
-                            one of the built-in apps that have access to
-                            sensitive data.
+                            But, like I just mentioned earlier, this is where Web
+                            Activities can come into play.
                         </aside>
                     </section>
 
                 </section>
 
                 <section>
-                    <h2>Developer tools</h2>
-                    <p>...</p>
-                    <aside class="notes">
-                        ...
-                    </aside>
+                    <section>
+                        <h2>Developer tools</h2>
+                        <p>{ live demo goes here }</p>
+                        <aside class="notes">
+                            Now, I'm going to attempt to show a quick live demo
+                            of the Developer Tools in Firefox with a real
+                            Firefox OS device.
+
+                            In case it fails, I have some boring backup
+                            screenshots to show. But let's hope it works.
+
+                            - install fxos simulator addon
+                            - install fxos simulators (1.4, 2.0, adb helper)
+                            - show phone connection
+                            - install the fxos boilerplate app
+                                https://github.com/robnyman/Firefox-OS-Boilerplate-App
+                            - install on phone
+                            - modify live DOM on phone
+                            - use Photo Booth to show the changes?
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-addon.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-app-manager.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img style="width: 50%" src="img/dev-tools-simulator.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-connected.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-app-before.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-inspector.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-inspector-after.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-app-after.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
                 </section>
 
                 <section>
