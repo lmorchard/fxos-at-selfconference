@@ -59,49 +59,72 @@
                 </section>
 
                 <section>
-                    <h2>Who am I?</h2>
 
-                    <p><img width="50%" src="img/me.jpg" alt="Me, cat pirate"></p>
+                    <section>
+                        <h2>Who am I?</h2>
 
-                    <p>{computer,web,mad} scientist</p>
-                    <p>{tech,scifi} writer</p>
-                    <p>home{brew,roast}er</p>
-                    <p><img src="img/Mozilla_dinosaur_head_logo.png" 
-                            style="height: 1em; margin: 0; border: 0; background: none"> Mozillian</p>
+                        <p><img width="50%" src="img/me.jpg" alt="Me, cat pirate"></p>
 
-                    <aside class="notes">
-                        Hi, my name is Les Orchard
-                        
-                        {computer,web,mad} scientist
-                        
-                        I’ve been a computer nerd since the 80’s, when I was a
-                        hyper kid whose attention could only be held for long
-                        periods of time by a keyboard and a glowing CRT
-                        
-                        I found the web when I was in college in the 90’s
-                        
-                        These days I like tinkering with random gadgets and
-                        electronics and blinking things
-                          
-                        {tech,scifi} writer
-                        
-                        I’ve gotten a few tech books published. I write little
-                        scifi stories, maybe I’ll do more someday
-                          
-                        home{brew,roast}er
-                        
-                        I make beer and I roast coffee
-                          
-                        Mozillian
-                        
-                        I've been a fan of Mozilla since the beginning, and I
-                        even took time off work to download &amp; build that
-                        first Netscape Open Source release back in 1998.
+                        <p>{computer,web,mad} scientist</p>
+                        <p>{tech,scifi} writer</p>
+                        <p>home{brew,roast}er</p>
+                        <p><img src="img/Mozilla_dinosaur_head_logo.png" 
+                                style="height: 1em; margin: 0; border: 0; background: none"> Mozillian</p>
 
-                        But, it took me 10 years to finally make Mozilla my job
-                        in 2008. And I've stayed for 6 years so far, longest
-                        I've been at any job.
-                    </aside>                    
+                        <aside class="notes">
+                            Hi, my name is Les Orchard
+
+                            Here, you can see me in my natural habitat working at
+                            home with a cat climbing me.
+                            
+                            I’ve been a computer nerd since the 80’s, I found the
+                            web when I was in college in the 90’s, and that's what
+                            I've been doing ever since.
+                            
+                            These days I also like tinkering with random gadgets
+                            and electronics with blinking things
+                              
+                            I’ve gotten a few tech books published. I write little
+                            scifi stories, but I haven't gotten any of those
+                            published.
+                              
+                            I make beer and I roast coffee.
+                              
+                            Oh, and I work for Mozilla. Six years this month.
+                        </aside>
+
+                    </section>
+
+                    <section>
+                        <h2>What do I do?</h2>
+                        <p><img src="img/mdn-home.png"></p>
+
+                        <aside class="notes">
+                            Though I work at Mozilla, I don't work on Firefox.
+
+                            Though I have submitted a few pull requests to Firefox
+                            OS, I'm not a main contributor by a long shot. 
+                            
+                            Anybody here could fork the repo on GitHub and do the
+                            same thing.
+                            
+                            Mainly, I'm a web developer. And, right now, I'm
+                            working on developer.mozilla.org - or MDN.
+
+                            MDN is a big community maintained body of documentation
+                            for the Open Web.
+
+                            So, as context for this talk, I guess I want to say I'm
+                            mainly interested in Firefox OS as a fan and a web
+                            developer. 
+
+                            I just think all this stuff is really cool, and
+                            that's why I work at Mozilla.
+                            
+                            I'm hoping this doesn't come off as a sales pitch, even
+                            if most of what I'm talking about is free.
+                        </aside>
+                    </section>
                 </section>
 
                 <section>
@@ -115,9 +138,11 @@
                     <!--<p>Hacking Firefox OS</p>-->
 
                     <aside class="notes">
-                        Just to make sure I'm not wasting your time and that
-                        you're in the right talk, here's a preview of what I'm
-                        going to try to cover today.
+                        So, with the introductions out of the way, I just want
+                        to make sure that you're in the right room and I'm not
+                        wasting any more of your time.
+
+                        Here's a preview of what I'm going to cover today.
 
                         (zoom out?)
                     </aside>
@@ -168,8 +193,10 @@
                             <img width="60%" src="img/firefox-is-fantastic.png">
                         </a>
 
+                        <!--
                         <p><a href="https://twitter.com/lmorchard/status/464433116380028928" target="_blank">Yeah,
                             ensuring a fantastic Open Web is part of our mission.</a></p>
+                        -->
 
                         <aside class="notes">
                             And, just as a recent example of our mission, this
@@ -178,6 +205,28 @@
 
                             This is actually a great headline from a Mozillian
                             perspective.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What is Mozilla?</h2>
+                        
+                        <blockquote cite="http://bits.blogs.nytimes.com/2014/05/02/the-new-firefox-is-fantastic-so-is-every-other-web-browser/?_php=true&_type=blogs&_php=true&_type=blogs&_r=1">
+                            &ldquo;As a result of the intense competition among
+                            browser makers — a fight incited by Mozilla, then
+                            joined by Apple, Google and, lately, by Microsoft,
+                            whose share of the browser market has plummeted in
+                            the last decade — <strong>desktop web browsers have
+                            improved vastly over the past few years</strong>. They’re
+                            now ferociously fast, they can load and keep open
+                            hundreds of tabs, they’re extremely stable and
+                            they’re capable of handling highly complex
+                            websites.&rdquo;<br><br>
+                            &mdash; Farhad Manjoo<br>
+                            <small>(<a href="http://bits.blogs.nytimes.com/2014/05/02/the-new-firefox-is-fantastic-so-is-every-other-web-browser/?_php=true&_type=blogs&_php=true&_type=blogs&_r=1">The New York Times, 2 May 2014</a>)</small>
+                        </blockquote>
+
+                        <aside class="notes">
                         </aside>
                     </section>
 
@@ -407,26 +456,34 @@
                         <p>Touch UI</p>
                         <p>Cost $1 to $5 <br>
                         <small>(<a href="http://gizmodo.com/5506939/the-50-wolfram-alpha-iphone-app-is-2-because-now-they-want-people-to-actually-buy-it">$50 is <em>really</em> pushing it</a>)</small></p>
-                    </section>
 
-                    <aside class="notes">
-                        Apps tend to be focused on a single task
+                        <aside class="notes">
+                            Apps tend to be focused on a single task
 
-                        Apps tend to have UI simplified for mobile and touch
-                        and smaller screens
-                        
-                        Apps tend to accommodate limited attention
-                        
-                        Apps tend to cost $1 or $5 or maybe $10, but that's
-                        pushing it
-                        
-                        Anyone remember the $50 Wolfram Alpha app that came
-                        out in Fall 2009?  - By spring 2010 it was $2
+                            Apps tend to have UI simplified for mobile and touch
+                            and smaller screens
                             
-                        And actually, if you remember even farther back,
-                        PalmOS had apps. But, they sold for prices anywhere
-                        from $10 to $100
-                    </aside>
+                            Apps tend to accommodate limited attention
+                            
+                            Apps tend to cost $1 or $5 or maybe $10, but that's
+                            pushing it
+                            
+                            Anyone remember the $50 Wolfram Alpha app that came
+                            out in Fall 2009? By spring 2010 it was $2
+                                
+                            And actually, if you remember even farther back,
+                            PalmOS had apps. 
+                            
+                            But, they sold for prices anywhere from $10 to
+                            $100. And, sometimes, you had to buy them on CDs
+                            that they sold in malls and you installed them with
+                            a HotSync cradle.
+
+                            ...
+
+                            Man, it's great living in the future.
+                        </aside>
+                    </section>
                 </section>
 
                 <section>
@@ -615,9 +672,8 @@
                             — are such a great way to write software for iPhone, <br>
                             <strong>then why isn’t Apple using this
                                 technique for any of their own iPhone apps?</strong>&rdquo;
-                            <br><br>&mdash; 
-                            <a href="http://daringfireball.net/2007/06/wwdc_2007_keynote">John Gruber</a><br>
-                                <small>(Daring Fireball, 11 Jun 2007)</small>
+                            <br><br>&mdash; John Gruber<br>
+                                <small>(<a href="http://daringfireball.net/2007/06/wwdc_2007_keynote">Daring Fireball, 11 Jun 2007</a>)</small>
                         </blockquote>
 
                         <aside class="notes">
@@ -634,9 +690,8 @@
                             And they didn't easily appear on anyone's home
                             screen, iPhone or otherwise.
 
-                            But, friends of the Open Web, including Mozilla, took
-                            these failings as challenges.
-
+                            But, friends of the Open Web took these failings as
+                            challenges.
                         </aside>
                     </section>
 
@@ -679,8 +734,8 @@
                         </table>
 
                         <aside class="notes">
-                            And this is what we've come up with. Things have
-                            changed since 2007.
+                            And this is what happened. Things have changed
+                            since 2007.
 
                             HTML5 brought with it a raft-load of new APIs that
                             most of the browser makers started implementing.
@@ -688,10 +743,14 @@
                             Now, web apps *do* work offline and they *do* have
                             local data storage.
 
-                            And, in fact, they now have access to all sorts of
+                            In fact, they now have access to all sorts of
                             capabilities like multimedia, 2D &amp; 3D graphics,
                             as well as a growing array of ways to communicate
                             over the web.
+
+                            (ramble about some APIs if there's time?)
+
+                            And there's a bunch of APIs I'm leaving out.
                             
                             But, there's still a lot of work left to do.
                         </aside>
@@ -713,13 +772,14 @@
                             Remember that thing about web apps not showing up
                             on home screens?
 
-                            It's not super obvious or well supported, but
-                            you've been able to turn a browser bookmark into a
-                            home screen icon for some time now.
+                            Well, you've been able to put an icon on the home
+                            screen from mobile browsers for awhile now.
                             
-                            Apple even established the apple-touch-icon HTML
-                            link relation for specifying what that icon should
-                            look like.
+                            It's hard to discover, but it mostly works.
+                            
+                            Apple even established an HTML link relation
+                            (apple-touch-icon) for specifying what that icon
+                            should look like.
                             
                             But really that's the bare minimum of what you need
                             to "install" a web app: It's a bookmark.
@@ -739,14 +799,19 @@
 
                             This is called "adaptive app search": you can
                             search for and launch apps and content right from
-                            the home screen without formally installing them
-                            first. 
+                            the home screen without bookmarking or formally
+                            installing them first. 
                             
-                            There's that code-on-demand thing again that the
-                            web's good at.
+                            There's that code-on-demand thing that the web's
+                            good at.
 
                             If you like what you find, you can add it to your
                             home screen for easy access later.
+
+                            (This is a press release photo, by the way, so it's
+                            a bit of a glamour shot. I have a real phone on me,
+                            so I can show you how it works later. It's pretty
+                            much like that though.)
                         </aside>
                     </section>
 
@@ -899,21 +964,21 @@ request.onerror = function () {
                         </code></pre>
 
                         <aside class="notes">
-                            Now, this is how you install an open web app using
-                            its manifest.
+                            Here's how you install an open web app using its
+                            manifest.
 
                             This is the code behind the install button on the
                             Firefox Marketplace.
 
-                            You can put this on your own page, and wire it up
-                            to a button.
+                            You can use this code, too. Wire it up to a button
+                            on your own web page, and you've got an app store.
 
                             It's an API that Mozilla has proposed as a new open
                             standard.
 
                             And like I said, this works on desktop as well as
                             mobile.
-                            
+
                             This is Mozilla's answer to "Add to home screen".
                         </aside>
                     </section>
@@ -972,17 +1037,19 @@ request.onerror = function () {
                         </table>
 
                         <aside class="notes">
-                            And here's a wall of words. They name some of the
-                            additional APIs that Mozilla is working to add to
-                            the Open Web platform.
+                            And here's a wall of words. 
+                            
+                            They name some - but not all - of the additional
+                            APIs that Mozilla is working to add to the Open Web
+                            platform.
 
                             The plan is to get each of these things and more
                             working in practical applications, then work to
                             turn them into open industry standards. In fact,
                             some of these already are on a standards track.
 
-                            I'm not going to go through all of these, but I can
-                            highlight a few of them.
+                            I'm not going to go through all of these, but I'll
+                            highlight a few of them to give you a taste.
                         </aside>
                     </section>
 
@@ -996,7 +1063,7 @@ window.navigator.vibrate([200, 100, 200]);
                         </code></pre>
 
                         <aside class="notes">
-                           And when I say "add to the Open Web platform", I
+                           So. when I say "add to the Open Web platform", I
                            mean something like this. 
 
                            You don't need to install a special plugin or SDK.
@@ -1258,12 +1325,11 @@ activity.onerror = function() {
                             Now, I know I really played up the whole thing
                             about code on demand earlier.
 
-                            In Firefox OS, plain web apps are called Hosted
-                            apps.
+                            In Firefox OS, plain web apps found on web servers
+                            are called Hosted apps.
 
-                            But, as it turns out, some apps benefit from being
-                            bundled up in one compound resource as a .zip
-                            file.
+                            But, some apps benefit from being bundled up in one
+                            compound resource as a .zip file.
 
                             For one, you can cryptographically sign the whole
                             bundle in order to make the app tamper resistant.
